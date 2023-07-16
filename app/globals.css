@@ -25,3 +25,64 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+#nav_section{
+  max-height: 10vh;
+}
+
+.color-changing-svg {
+  animation: color-change 5s linear infinite;
+}
+
+@keyframes color-change {
+  0% {
+    filter: invert(50%) sepia(100%) saturate(200%) hue-rotate(0deg);
+  }
+  50% {
+    filter: invert(50%) sepia(100%) saturate(200%) hue-rotate(180deg);
+  }
+  100% {
+    filter: invert(50%) sepia(100%) saturate(200%) hue-rotate(360deg);
+  }
+}
+
+
+#bingo-section{
+  background-image: url('/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 90vh;
+}
+
+.animated-border-1 {
+  animation: border-dance 4s infinite linear;
+}
+
+@keyframes border-dance {
+  0% {
+    border-color: #fa75dd;
+  }
+  50% {
+    border-color: #FF4655;
+  }
+  100% {
+    border-color: #fa75dd;
+  }
+}
+
+.animated-border-2 {
+  animation: border-dance-2 4s infinite linear;
+}
+
+@keyframes border-dance-2 {
+  0% {
+    border-color: #13FCF9;
+  }
+  50% {
+    border-color: #3cfb9b;
+  }
+  100% {
+    border-color: #13FCF9;
+  }
+}
+
