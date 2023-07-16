@@ -43,13 +43,14 @@ export default function Bingo({items, size, seed}:any) {
 
     useEffect(()=>{
         const randomizer = new SeedRandomizer(seed);
+        console.log(size*size, items.length);
         setSelectedItems([]) ;
         let conlficts = 0;
         const newGrid : string[][] = [];
         for (let i = 0; i < size; i++) {
             for (let j = 0; j < size; j++) {
               let randomItem = items[Math.abs(randomizer.random(items.length)) % items.length];
-              while( isXInSecondPosition(newGrid, randomItem)){
+              while(size*size<items.length && isXInSecondPosition(newGrid, randomItem)){
                 conlficts +=1 ;
                 randomItem = items[Math.abs(randomizer.random(items.length)) % items.length];
               }
@@ -60,7 +61,7 @@ export default function Bingo({items, size, seed}:any) {
           }    
           console.log(`While generating random, ran into ${conlficts} conflics`)
           setGrid(newGrid)
-    }, [seed, items]);
+    }, [seed, size, items]);
     
   
     
