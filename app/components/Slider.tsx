@@ -12,7 +12,7 @@ const Slider: React.FC<SliderProps> = ({ min, max, setValue}) => {
   const [sliderValue, setSliderValue] = useState(min);
 
   const handleSliderChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = parseInt(event.target.value);
+    const value = parseInt(event.target.value) || 0;
     setSliderValue(value);
     setValue(value);
   };
