@@ -84,11 +84,11 @@ export default function Home() {
       <Bingo items={list} size={numberOf} seed={seed}/>
       <div id="sliders" className="flex flex-row justify-center">
           <label className="text-lg mr-3">Board Size:</label>
-          <Slider min={3} max={12} setValue={setNumberOf}/>
+          <Slider min={3} max={12} setValue={setNumberOf} defaultValue={5}/>
           <label className="text-lg mx-4"> | </label>
 
           <label className="text-lg mr-3">Seed</label>
-          <Slider min={1} max={1000000000000} setValue={setSeed}/>
+          <Slider min={1} max={1000000000000} setValue={setSeed} defaultValue={1}/>
 
           <label className="text-lg mx-4"> | </label>
 

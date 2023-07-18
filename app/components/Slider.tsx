@@ -5,11 +5,12 @@ import React, { useState } from 'react';
 interface SliderProps {
   min: number;
   max: number;
+  defaultValue: number;
   setValue: any;
 }
 
-const Slider: React.FC<SliderProps> = ({ min, max, setValue}) => {
-  const [sliderValue, setSliderValue] = useState(min);
+const Slider: React.FC<SliderProps> = ({ min, max, defaultValue, setValue}) => {
+  const [sliderValue, setSliderValue] = useState(defaultValue || min);
 
   const handleSliderChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const value = parseInt(event.target.value) || 0;
